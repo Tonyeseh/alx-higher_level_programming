@@ -5,7 +5,7 @@ while i < 9:
     while j < 10:
         print(f"{i}", end='')
         print(f"{j}", end='')
-        if i == 8 and j ==9:
+        if i == 8 and j == 9:
             print("")
         else:
             print("", end=", ")
