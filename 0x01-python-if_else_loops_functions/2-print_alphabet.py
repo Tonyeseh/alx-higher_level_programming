@@ -1,4 +1,3 @@
 #!/usr/bin/python3
-lower = "abcdefghijklmnopqrstuvwxyz"
-for alpha in lower:
-    print(f"{alpha}", end='')
+for alpha in range(97, 123):
+    print(f"{chr(alpha)}", end='')
