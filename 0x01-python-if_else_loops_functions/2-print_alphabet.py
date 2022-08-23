@@ -1,2 +1,4 @@
 #!/usr/bin/python3
-print("abcdefghijklmnopqrstuvwxyz", end='')
+lower = "abcdefghijklmnopqrstuvwxyz"
+for alpha in lower:
+    print(f"{alpha}", end='')
