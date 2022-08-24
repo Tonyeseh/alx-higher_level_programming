@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 i = 0
 while i < 9:
-    j = 1
+    j = i + 1
     while j < 10:
         print(f"{i}", end='')
         print(f"{j}", end='')
