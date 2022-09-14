@@ -81,7 +81,7 @@ class Square:
             x_lines = " " * self.__position[0]
             square = "#" * self.__size
             line = x_lines + square
-            print_square = y_lines + ((line + "\n") * (self.__size - 1)) + (line)
+            print_s = y_lines + ((line + "\n") * (self.__size - 1)) + (line)
         else:
-            print_square = ""
-        return print_square
+            print_s = ""
+        return print_s
