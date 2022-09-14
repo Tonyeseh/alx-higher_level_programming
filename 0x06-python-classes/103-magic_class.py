@@ -14,12 +14,12 @@ class MagicClass:
         """
         if type(radius) is not int and type(radius) is not float:
             raise("radius must be a number")
-        self.__radius = radius
+        self._MagicClass__radius = radius
 
     def area(self):
         """ Method finds the area of a circle """
-        return (math.pi * (self.__radius ** 2))
+        return (math.pi * (self._MagicClass__radius ** 2))
 
     def circumference(self):
         """ Method finds the circumference of a circle """
-        return ((2 * math.pi) * self.__radius)
+        return ((2 * math.pi) * self._MagicClass__radius)
