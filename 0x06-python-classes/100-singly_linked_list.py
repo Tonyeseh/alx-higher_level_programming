@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 """ Class Node """
 
+
 class Node:
     """ Defines a node of singly linked list """
-    
+
     def __init__(self, data, next_node=None):
         """ Initialises a Node object
-        
+
         Args:
             data (int): data part of the new node
             next_node (Node object): next node in the list
@@ -48,7 +49,7 @@ class SinglyLinkedList:
 
     def sorted_insert(self, value):
         """ Inserts new node into a listed list in sorted manner.
-        
+
         Args:
             value (int): value of new Node object
         """
