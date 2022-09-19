@@ -3,13 +3,13 @@
 
 
 class Rectangle:
-    """ Represent a Rectangle object 
-        
+    """ Represent a Rectangle object
+
         Attributes:
             number_of_instances (int): Number of rectangle objects created
             print_symbol (any): print symbol for string representation
     """
-    
+
     number_of_instances = 0
     print_symbol = "#"
 
@@ -32,7 +32,11 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        """ Setter for height attribute it also validates it """
+        """ Setter for height attribute it also validates it
+
+            Args:
+                value (int): width of new object
+        """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -70,7 +74,7 @@ class Rectangle:
     @classmethod
     def square(cls, size=0):
         """ Returns a new Rectangle instance with width == height == size
-            
+
             Args:
                 size (int): value to be assigned to width and height
         """
@@ -78,7 +82,12 @@ class Rectangle:
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
-        """ Returns the biggest rectangle based on the area """
+        """ Returns the biggest rectangle based on the area
+
+            Args:
+            rect_1 (Rectangle object): first rectangle object
+            rect_2 (Rectangle object): second rectangle object
+        """
         if type(rect_1) is not Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
         if type(rect_2) is not Rectangle:
