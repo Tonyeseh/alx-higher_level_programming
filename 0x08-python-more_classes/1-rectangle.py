@@ -36,7 +36,7 @@ class Rectangle:
     @height.setter
     def height(self, value):
         """ Setter of height attibute.
-        
+
         Args:
             value (int): height of new object
         """
