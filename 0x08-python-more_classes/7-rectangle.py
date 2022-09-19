@@ -3,13 +3,13 @@
 
 
 class Rectangle:
-    """ Represent a Rectangle object 
-        
+    """ Represent a Rectangle object
+
         Attributes:
             number_of_instances (int): Number of rectangle objects created
             print_symbol (any): print symbol for string representation
     """
-    
+
     number_of_instances = 0
     print_symbol = "#"
 
