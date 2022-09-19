@@ -57,6 +57,7 @@ class Rectangle:
         return (2 * (self.__height + self.__width))
 
     def __str__(self):
+        """ Defines the print() function format of a Class object """
         if self.__height == 0 or self.__width == 0:
             return ""
         width = "#" * self.__width
@@ -64,4 +65,5 @@ class Rectangle:
         return rec
 
     def __repr__(self):
+        """ Defines the official representation of a Rectangle Object """
         return ("Rectangle({}, {})".format(self.__width, self.height))
