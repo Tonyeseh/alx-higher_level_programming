@@ -1,0 +1,89 @@
+# 0-add_integer.txt
+
+============================
+How to use 0-add_integer.py
+============================
+
+This module defines the function ``add_integer(a, b=98)`` that adds 2 integers
+
+Numbers
+========
+
+``add_integer(...)`` returns the sum of its arguments. for numbers, that value
+is equivalent to using the ``+`` operator.
+
+::
+
+	>>> add = __import__('0-add_integer').add_integer
+	>>> add(2, 3)
+	5
+
+::
+
+	>>> add(-89, 9)
+	-80
+
+::
+
+	>>> add(-9, -8)
+	-17
+
+The function also add floating-point numbers
+
+::
+
+	>>> add(2.0, 3.0)
+	5
+
+Note that float are casted into int before addition is done
+
+::
+
+	>>> add(-2.3, 3.3)
+	1
+
+::
+
+	>>> add(-9.5, -4.0)
+	-13
+
+Floating and non-floating point numbers can be used
+
+::
+
+	>>> add(-9, 7.9)
+	-2
+
+The second argument is optional - and its 98 by defualt.
+
+::
+
+	>>> add(8)
+	106
+
+Non-numbers
+===========
+
+``add()`` expects both arguments to be either float or integers.
+If either or both are not, a TypeError is raised
+
+::
+
+	>>> add(["kings", 0], 8)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+::
+
+	>>> add(9, "school")
+	Traceback (most recent call last):
+	TypeError: b must be an integer
+
+If bothargumnents are not floats or integers, a TyperError message
+is printed fro only the first argument
+
+::
+
+	>>> add(None, {"first": "argument"})
+	Traceback (most recent call last):
+	TypeError: a must be an integer
