@@ -87,3 +87,31 @@ is printed fro only the first argument
 	>>> add(None, {"first": "argument"})
 	Traceback (most recent call last):
 	TypeError: a must be an integer
+
+The function will fail with infinity provided
+
+::
+
+	>>> add(float('inf'))
+	Traceback (most recent call last):
+	OverflowError: cannot convert float infinity to integer
+
+::
+
+	>>> add(2, float('inf'))
+	Traceback (most recent call last):
+	OverflowError: cannot convert float infinity to integer
+
+The function will also fail when NaN numbers are passed
+
+::
+
+	>>> add(float('nan'))
+	Traceback (most recent call last):
+	ValueError: cannot convert float NaN to integer
+
+::
+
+	>>> add(3, float('nan'))
+	Traceback (most recent call last):
+	ValueError: cannot convert float NaN to integer
