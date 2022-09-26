@@ -1,0 +1,138 @@
+#1-my_list.txt
+
+
+=======================
+How to Use 1-mylist.py
+=======================
+
+This module defines a class ``MyList`` that extends the ``list`` class
+
+Importing the module
+
+::
+
+	>>> MyList = __import__("1-my_list").MyList
+
+
+Instantiation
+=============
+
+Note: that this class works just a list class
+
+MyList must be instantiated with no argument or just one argument -
+Must be iterable
+
+::
+
+	>>> my_list = MyList()
+	>>> type(my_list)
+	<class '1-my_list.MyList'>
+
+::
+
+	>>> print(my_list)
+	[]
+
+::
+
+	>>> my_list = MyList([1, 2, 4])
+	>>> print(my_list)
+	[1, 2, 4]
+
+::
+
+	>>> my_list = MyList(None)
+	Traceback (most recent call last):
+	TypeError: 'NoneType' object is not iterable
+
+::
+
+	>>> my_list = MyList("String")
+	>>> print(my_list)
+	['S', 't', 'r', 'i', 'n', 'g']
+
+::
+
+	>>> my_list = MyList([3, 5], [7, 10])
+	Traceback (most recent call last):
+	TypeError: list expected at most 1 argument, got 2
+
+Usage
+======
+
+Note that ``MyList`` has same methods as ``list`` because of inheritance.
+See the documentation on Python lists for built-in methods.
+
+
+
+``print_sorted`` method
+=======================
+
+``MyList`` imlements a single method - a public instance method
+``print_sorted(self)`` which prints the sorted version of a ``MyList`` object
+in ascending order
+
+
+::
+
+	>>> my_list = MyList()
+	>>> my_list.print_sorted()
+	[]
+
+This method takes no arguments - a TypeError is raised if aan argument
+is provided
+
+::
+
+	>>> my_list.print_sorted(4)
+	Traceback (most recent call last):
+	TypeError: print_sorted() takes 1 positional argument but 2 were given
+
+::
+
+	>>> my_list.append(17)
+	>>> my_list.append(0)
+	>>> my_list.append(3)
+	>>> my_list.append(1)
+	>>> my_list.append(9)
+	>>> my_list.append(5)
+	>>> my_list.append(8)
+	>>> print(my_list)
+	[17, 0, 3, 1, 9, 5, 8]
+
+::
+
+	>>> my_list.print_sorted()
+	[0, 1, 3, 5, 8, 9, 17]
+
+The order of the original string is not affected ater the method is called
+
+::
+
+	>>> print(my_list)
+	[17, 0, 3, 1, 9, 5, 8]
+
+Note that as long as the elements in the MyList object are same,
+they would be sorted.
+Strings are sorted lexographically
+
+::
+
+	>>> my_list = MyList(["Alx", "Software", "Engineering", "School"])
+	>>> my_list.print_sorted()
+	['Alx', 'Engineering', 'School', 'Software']
+
+::
+
+	>>> print(my_list)
+	['Alx', 'Software', 'Engineering', 'School']
+
+If ``print_sorted`` is called on a list with different types,
+a TypeError is raised
+
+::
+
+	>>> my_list = MyList(["Alx", 4, "School"])
+	>>> my_list.print_sorted()
+	Traceback (most recent call last):
+	TypeError: '<' not supported between instances of 'int' and 'str'
