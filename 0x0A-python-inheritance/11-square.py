@@ -19,4 +19,5 @@ class Square(Rectangle):
 
     def __str__(self):
         """ Print() format for a Square object """
-        return ("[{}] {}/{}".format(type(self).__name__, self.__size, self.__size))
+        return ("[{}] {}/{}"
+                .format(type(self).__name__, self.__size, self.__size))

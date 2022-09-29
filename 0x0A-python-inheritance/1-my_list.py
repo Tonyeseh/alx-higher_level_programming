@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Module defines ``MyList`` class """
 
+
 class MyList(list):
     """ Extention of list class
 

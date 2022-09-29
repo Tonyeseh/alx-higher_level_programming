@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Module defines an inherited class-checking function"""
 
+
 def inherits_from(obj, a_class):
     """ Checks if an object is a inherited instance of a class.
 
