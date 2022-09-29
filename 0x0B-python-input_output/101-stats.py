@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 """ reads stdin line by line and computes metrics
-    
+
     After every ten lines or the input of a keyboard interruption (CTRL + C),
 prints the following statistics:
     - Total file size up to that point.
     - Count of read status codes up to that point.
 """
+
 
 def print_stat(size, codes):
     """ prints the current stat
@@ -17,6 +18,7 @@ def print_stat(size, codes):
     print("File size: {}".format(size))
     for key in sorted(codes):
         print("{}: {}".format(key, codes[key]))
+
 
 if __name__ == "__main__":
     import sys

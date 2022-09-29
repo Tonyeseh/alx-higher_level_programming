@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Defines a class Student """
 
+
 class Student:
     """ Defines class Student """
     def __init__(self, first_name, last_name, age):
@@ -18,7 +19,8 @@ class Student:
     def to_json(self, attrs=None):
         """ retrieves dictionary representation of a Student instance """
         if (type(attrs) == list and all(type(ele) == str for ele in attrs)):
-            return {key: getattr(self, key) for key in attrs if hasattr(self, key)}
+            return {key: getattr(self, key) for key in attrs
+                    if hasattr(self, key)}
 
         return self.__dict__
 
@@ -27,7 +29,7 @@ class Student:
 
         Args:
             json (dict): dictionary containing dictionary key as attribute name
-                        and dictionary value as vlaue to be assigned to attribute
+                and dictionary value as vlaue to be assigned to attribute
         """
         for key in json:
             if (hasattr(self, key)):

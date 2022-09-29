@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 """ Defines ``append_after()`` function """
 
+
 def append_after(filename="", search_string="", new_string=""):
-    """ inserts a new line of text to a file, after each line containing a specific string
+    """ inserts a new line of text to a file,
+        after each line containing a specific string
 
         Args:
             search_string (str): string to search for

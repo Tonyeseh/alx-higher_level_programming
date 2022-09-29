@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Defines ``append_write()`` function"""
 
+
 def append_write(filename="", text=""):
     """ appends astring at the end of a text file UTF-8
 

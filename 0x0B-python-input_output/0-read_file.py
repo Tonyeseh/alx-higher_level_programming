@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Module defines ``read_file(filename)`` function """
 
+
 def read_file(filename=""):
     """ opens a file and prints it's content out
 
