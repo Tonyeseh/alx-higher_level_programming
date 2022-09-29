@@ -18,12 +18,12 @@ def print_stat(size, codes):
     for key in sorted(codes):
         print("{}: {}".format(key, codes[key]))
 
-if __name__ == "main":
+if __name__ == "__main__":
     import sys
 
     file_size = 0
     status_codes = {}
-    status_list = [200, 301, 400, 401, 403, 404, 405, 500]
+    status_list = ['200', '301', '400', '401', '403', '404', '405', '500']
     count = 0
 
     try:
@@ -34,18 +34,22 @@ if __name__ == "main":
             else:
                 count += 1
 
-            split = line.split("\n ")
+            split = line.split()
 
             try:
                 file_size += int(split[-1])
 
-                if line[-2] in status_codes:
-                    if status_codes.get(line[-2], -1) == -1:
-                        status_codes[line[-2]] = 1
-                    else:
-                        status_codes[line[-2]] += 1
-
             except (ValueError, IndexError):
+                pass
+
+            try:
+                if split[-2] in status_list:
+                    if status_codes.get(split[-2], -1) == -1:
+                        status_codes[split[-2]] = 1
+                    else:
+                        status_codes[split[-2]] += 1
+
+            except IndexError:
                 pass
 
         print_stat(file_size, status_codes)
