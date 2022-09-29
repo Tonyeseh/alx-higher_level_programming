@@ -101,3 +101,17 @@ class Rectangle(Base):
     def area(self):
         """ Returns the area of a Rectangle object """
         return (self.__width * self.__height)
+
+    def display(self):
+        """ Print in stdout the Rectangle instance with the character "#" """
+        for i in range(self.__height):
+            print('#' * self.__width)
+
+    def __str__(self):
+        """ Overrides the __str__ method and returns informationa bout object
+
+            Format: [Rectangle] (<id>) <x>/<y> - <width>/<height>
+        """
+        return "[{}] ({}) {}/{} - {}/{}".format(
+                self.__class__.__name__, self.id, self.__x, self.__y,
+                self.__width, self.__height)
