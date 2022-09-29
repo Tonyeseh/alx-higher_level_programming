@@ -14,4 +14,3 @@ def add_attribute(an_obj, an_attr, a_value):
         raise TypeError("can't add new attribute")
 
     setattr(an_obj, an_attr, a_value)
-
