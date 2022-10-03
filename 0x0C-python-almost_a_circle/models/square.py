@@ -32,6 +32,41 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
+    def update(self, *args, **kwargs):
+        """ Updates class Square assigns attribute to rach argument
+
+            Args:
+                *args: 1st arg - id attribute
+                        2nd arg - width attribute
+                        3th arg - x attribute
+                        4th arg - y attribute
+                 **kwargs: assigns a key/value argument to attributes.
+                        if *args exist and is not empty kwargs is not used.
+        """
+        if args is not None and len(args) != 0:
+            if args[0] is not None and type(args[0]) != int:
+                raise TypeError("id must be an integer")
+            self.id = args[0]
+            if len(args) > 1:
+                self.height = self.width = args[1]
+            if len(args) > 2:
+                self.x = args[2]
+            if len(args) > 3:
+                self.y = args[3]
+
+        else:
+            for k, v in kwargs.items():
+                if k == "id":
+                    if not isinstance(v, int):
+                        raise TypeError("id must be an integer")
+                    self.id = v
+                elif k == "size":
+                    self.height = self.width = v
+                elif k == "x":
+                    self.x = v
+                elif k == "y":
+                    self.y = v
+
     def __str__(self):
         """ returns the print() version of square """
         return "[{}] ({}) {}/{} - {}".format(
