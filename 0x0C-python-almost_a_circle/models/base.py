@@ -25,6 +25,16 @@ class Base:
             self.id = type(self).__nb_objects
 
     @staticmethod
+    def from_json_string(json_string):
+        """ Returns the list of the JSON string representation ``json_string``
+
+            Args:
+                json_string (json string): string representing a
+                                            list of dictionaries
+        """
+        return (json.loads(json_string))
+
+    @staticmethod
     def to_json_string(list_dictionaries):
         """ returns the JSON string format representations
             of list_dictionaries
@@ -58,3 +68,21 @@ class Base:
 
         with open(filename, "w", encoding="utf-8") as fs:
             fs.write(json_str)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ Returns an instance with all attributes already set
+
+            Args:
+                **dictionary (pointer to dictionary):
+
+            use update method to assign attribute after
+            creating instance with dummy mandatory attributes
+        """
+        if cls.__name__ == "Rectangle":
+            new_obj = cls(1, 1)
+        else:
+            new_obj = cls(1)
+
+        new_obj.update(**dictionary)
+        return new_obj
