@@ -17,10 +17,10 @@ class Rectangle(Base):
                 id (int): id of object
         """
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
     def width(self):
@@ -108,6 +108,45 @@ class Rectangle(Base):
             print()
         for i in range(self.__height):
             print((' ' * self.__x) + ('#' * self.__width))
+
+    def update(self, *args, **kwargs):
+        """ Updates class Rectangle that assigns an atribute to each argument
+
+            Args:
+                *args: 1st arg - id attribute
+                        2nd arg - width attribute
+                        3rd arg - height attribute
+                        4th arg - x attribute
+                        5th arg - y attribute
+                **kwargs: assigns a key/value argument to attributes.
+                        if *args exist and is not empty kwargs is not used.
+        """
+        if args is not None and len(args) != 0:
+            if args[0] is None or type(args[0]) != int:
+                raise TypeError("id must be an integer")
+            self.id = args[0]
+            if len(args) > 1:
+                self.width = args[1]
+            if len(args) > 2:
+                self.height = args[2]
+            if len(args) > 3:
+                self.x = args[3]
+            if len(args) == 5:
+                self.y = args[4]
+        else:
+            for k, v in kwargs.items():
+                if k == "id":
+                    if not isinstance(v, int):
+                        raise TypeError("id must be an integer")
+                    self.id = v
+                elif k == "width":
+                    self.width = v
+                elif k == "height":
+                    self.height = v
+                elif k == "x":
+                    self.x = v
+                elif k == "y":
+                    self.y = v
 
     def __str__(self):
         """ Overrides the __str__ method and returns informationa bout object
