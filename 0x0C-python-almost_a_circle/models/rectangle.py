@@ -148,11 +148,23 @@ class Rectangle(Base):
                 elif k == "y":
                     self.y = v
 
+    def to_dictionary(self):
+        """ returns the dictionary representation of a Rectangle """
+        return {
+                "id": self.id,
+                "width": self.width,
+                "height": self.height,
+                "x": self.x,
+                "y": self.y
+            }
+        return (rect_dict)
+
     def __str__(self):
         """ Overrides the __str__ method and returns informationa bout object
 
             Format: [Rectangle] (<id>) <x>/<y> - <width>/<height>
         """
-        return "[{}] ({}) {}/{} - {}/{}".format(
-                self.__class__.__name__, self.id, self.__x, self.__y,
-                self.__width, self.__height)
+        return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
+                                                self.id, self.__x,
+                                                self.__y, self.__width,
+                                                self.__height)
