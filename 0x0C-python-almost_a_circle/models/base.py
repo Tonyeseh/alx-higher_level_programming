@@ -44,7 +44,7 @@ class Base:
 
         """
         if (not isinstance(list_dictionaries, list) or
-            len(list_dictionaries) == 0):
+                len(list_dictionaries) == 0):
             return "[]"
         return (json.dumps(list_dictionaries))
 
