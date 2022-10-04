@@ -25,6 +25,11 @@ class TestBase_instantiation(unittest.TestCase):
         b2 = Base()
         self.assertEqual(b1.id, b2.id - 1)
 
+    def test_assigning_ID(self):
+        b3 = Base()
+        b4 = Base()
+        self.assertEqual(b3.id + 1, b4.id)
+
     def test_one_arg(self):
         self.assertEqual(13, Base(13).id)
         self.assertEqual(-9, Base(-9).id)
@@ -41,8 +46,8 @@ class TestBase_instantiation(unittest.TestCase):
         self.assertEqual(9, b.id)
 
     def test_type(self):
-        b3 = Base()
-        self.assertTrue(isinstance(b3, Base))
+        b5 = Base()
+        self.assertTrue(isinstance(b5, Base))
 
     def test_two_args(self):
         with self.assertRaises(TypeError):
@@ -116,7 +121,7 @@ class TestBase_save_to_file(unittest.TestCase):
         r = Rectangle(9, 8, 7, 6, 5)
         Rectangle.save_to_file([r])
         with open("Rectangle.json", "r") as f:
-            self.assertTrue(len(f.read()) = 52)
+            self.assertTrue(len(f.read()) == 52)
 
     def test_save_to_file_two_rects(self):
         r1 = Rectangle(1, 8, 9, 4, 10)
@@ -150,7 +155,25 @@ class TestBase_save_to_file(unittest.TestCase):
             self.assertTrue(len(f.read()) == 40)
 
     def test_save_to_file_none(self):
-        Square.save_to_
+        Square.save_to_file(None)
+        with open("Square.json", "r") as f:
+            self.assertEqual("[]", f.read())
+
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as f:
+            self.assertEqual("[]", f.read())
+
+    def test_save_to_file_empty_list(self):
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r") as f:
+            self.assertEqual("[]", f.read())
+
+        Square.save_to_file([])
+        with open("Square.json", "r") as f:
+            self.assertEqual("[]", f.read())
+
+
+
 
 if "__name__" == "__main__":
     unittest.main()
