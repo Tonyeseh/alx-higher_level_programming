@@ -59,6 +59,7 @@ class Base:
         if list_objs is None:
             with open(filename, "w", encoding="utf-8") as f:
                 f.write("[]")
+                return
 
         list_dict = []
         for obj in list_objs:
@@ -101,3 +102,20 @@ class Base:
                 return inst_list
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ Serialises class in CSV format
+
+            Args:
+                list_objs (list): list of objects
+
+            Format:
+                Rectangle: <id>,<width>,<height>,<x>,<y>
+                Square: <id>,<size>,<x>,<y>
+        """
+        if list_objs is None or not isinstance(list_objs, list):
+            pass
+        else:
+            for obj in list_objs:
+                csv_str
