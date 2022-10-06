@@ -32,6 +32,8 @@ class Base:
                 json_string (json string): string representing a
                                             list of dictionaries
         """
+        if json_string is None:
+            return ([])
         return (json.loads(json_string))
 
     @staticmethod
