@@ -160,20 +160,36 @@ class Base:
     def draw(list_rectangles, list_squares):
         """ Opens a window and draws all the Rectangles and
             Squares in the list
-
             Args:
                 list_rectangles: list of rectangles
                 lsit_squares: list of squares
         """
         obj = turtle.Turtle()
+        obj.pensize(3)
+        obj.shape("turtle")
+
+        obj.color("teal")
         for rect in list_rectangles:
+            obj.showturtle()
+            obj.penup()
+            obj.goto(rect.x, rect.y)
+            obj.pendown()
             for i in range(2):
                 obj.forward(rect.width)
                 obj.left(90)
                 obj.forward(rect.height)
                 obj.left(90)
+            obj.hideturtle()
 
-        for sq in list_square:
-            for i in range(2):
+        obj.color("brown")
+        for sq in list_squares:
+            obj.showturtle()
+            obj.penup()
+            obj.goto(sq.x, sq.y)
+            obj.pendown()
+            for i in range(4):
                 obj.forward(sq.size)
                 obj.left(90)
+            obj.hideturtle()
+
+        turtle.done()
