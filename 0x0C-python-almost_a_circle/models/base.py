@@ -146,8 +146,9 @@ class Base:
                 else:
                     fieldname = ["id", "size", "x", "y"]
                 list_dict = list(csv.DictReader(csv_file, fieldname))
-                list_dict = [{k: int(v) for k, v in dic.items()}
-                                for dic in list_dict]
+                list_dict = [{k: int(v)
+                             for k, v in dic.items()}
+                             for dic in list_dict]
                 obj_list = [cls.create(**obj) for obj in list_dict]
                 return obj_list
 
