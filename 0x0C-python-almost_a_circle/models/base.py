@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Defines a class Base """
 import json
+import csv
 
 
 class Base:
@@ -116,8 +117,39 @@ class Base:
                 Rectangle: <id>,<width>,<height>,<x>,<y>
                 Square: <id>,<size>,<x>,<y>
         """
-        if list_objs is None or not isinstance(list_objs, list):
-            pass
-        else:
-            for obj in list_objs:
-                csv_str
+        filename = cls.__name__ + ".csv"
+        with open(filename, "w", newline="") as csv_f:
+            if list_objs is None or list_objs == []:
+                csv_f.write("[]")
+            else:
+                if cls.__name__ == "Rectangle":
+                    fieldname = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldname = ["id", "size", "x", "y"]
+                writer = csv.DictWriter(csv_f, fieldnames=fieldname)
+                for obj in list_objs:
+                    writer.writerow(obj.to_dictionary())
+
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Return a list of classed instantiated from a csv file.
+
+            Retuns:
+                if the file does not exist - an empty list
+                Otherwise a list of instantiated classes.
+        """
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, "r", newline="") as csv_file:
+                if cls.__name__ == "Rectangle":
+                    fieldname = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldname = ["id", "size", "x", "y"]
+                list_dict = list(csv.DictReader(csv_file, fieldname))
+                list_dict = [{k: int(v) for k, v in dic.items()} for dic in list_dict]
+                obj_list = [cls.create(**obj) for obj in list_dict]
+                return obj_list
+
+        except FileNotFoundError:
+            return []
