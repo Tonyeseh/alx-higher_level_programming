@@ -1,2 +1,2 @@
 -- lists creates a table called first_table in the current database
-CREATE TABLE first_table;
+CREATE TABLE IF NOT EXISTS first_table;
