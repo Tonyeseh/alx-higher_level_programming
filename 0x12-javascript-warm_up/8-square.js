@@ -2,7 +2,7 @@
 
 const printMessage = parseInt(process.argv[2]);
 if (isNaN(printMessage)) {
-  console.log('Missing number of occurrences');
+  console.log('Missing size');
 } else {
   for (let i = 0; i < printMessage; i++) {
     let message = '';
