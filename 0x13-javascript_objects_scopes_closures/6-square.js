@@ -10,10 +10,8 @@ module.exports = class Square extends Rectangle {
     if (c === undefined) {
       super.print();
     } else {
-      let string;
+      const string = c.repeat(this.width);
       for (let i = 0; i < this.height; i++) {
-        string = '';
-        for (let j = 0; j < this.width; j++) { string = string + c; }
         console.log(string);
       }
     }
