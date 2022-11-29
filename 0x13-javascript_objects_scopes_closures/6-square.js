@@ -1,10 +1,7 @@
 #!/usr/bin/node
-const Rectangle = require('./4-rectangle');
+const Square0 = require('./5-square');
 
-module.exports = class Square extends Rectangle {
-  constructor (size) {
-    super(size, size);
-  }
+module.exports = class Square extends Square0 {
 
   charPrint (c) {
     if (c === undefined) {
