@@ -19,22 +19,13 @@ module.exports = class Rectangle {
   }
 
   rotate () {
-    for (let i = 0; i < this.width; i++) {
-      let string = '';
-      for (let j = 0; j < this.height; j++) {
-        string = string + 'X';
-      }
-      console.log(string);
-    }
+    const tmp = this.height;
+    this.height = this.width;
+    this.width = tmp;
   }
 
   double () {
-    for (let i = 0; i < this.height * 2; i++) {
-      let string = '';
-      for (let j = 0; j < this.width * 2; j++) {
-        string = string + 'X';
-      }
-      console.log(string);
-    }
+    this.height *= 2;
+    this.width *= 2;
   }
 };
