@@ -7,7 +7,7 @@ module.exports = class Square extends Rectangle {
   }
 
   charPrint (c) {
-    if (typeof c === 'undefined') {
+    if (c === undefined) {
       super.print();
     } else {
       let string;
