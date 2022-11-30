@@ -29,7 +29,7 @@ Prototypes for some functions written in this project:
 
 * **2. Rectangle #2**
 	* [2-rectangle.js](./2-rectangle.js): class `Rectangle` that defines a rectangle. Updates [1-rectangle.js](./1-rectangle.js):
-		* If `w` or `h` is equal to `0` or not a positive integer, create an empty object.
+		* If `w` or `h` is equal to `0` or not a positive integer, creates an empty object.
 
 * **3. Rectangle #3**
 	* [3-rectangle.js](./3-rectangle.js): class `Rectangle` that defines a rectangle. Updates [2-rectangle.js](./2-rectangle.js):
@@ -51,17 +51,17 @@ Prototypes for some functions written in this project:
 If c is undefined, use the character `X`.
 
 * **7. Occurrences**
-	* [7-occurrences.js](./7-occurrences.js): a function that returns the number of occurrences in a list:
+	* [7-occurrences.js](./7-occurrences.js): a function that returns the number of occurrences of an element in a list
 
 * **8. Esrever**
 	* [8-esrever.js](./8-esrever.js): a function that returns the reversed version of a list:
 
 
 * **9. Log me**
-	* [9-logme.js](./9-logme.js): a function that prints the number of arguments already printed and the new argument value.Output format: `<number arguments already printed>: <current argument value>`
+	* [9-logme.js](./9-logme.js): a function that prints the number of arguments already printed and the new argument value. Output format: `<number arguments already printed>: <current argument value>`
 
 * **10. Number conversion**
-	* [10-converter.js](./10-converter.js): a function that converts a number from base 10 to another base passed as argument:
+	* [10-converter.js](./10-converter.js): a function that converts a number from `base` `10` to another base passed as argument:
 
 * **11. Factor index**
 	* [100-map.js](./100-map.js): a script that imports an array and computes a new array.
