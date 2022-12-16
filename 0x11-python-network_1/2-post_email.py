@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """sends a POST request passed with an email parameter"""
 
-import sys, urllib.request, urllib.parse
+import sys
+import urllib.request
+import urllib.parse
 
 if __name__ == "__main__":
     url = sys.argv[1]
