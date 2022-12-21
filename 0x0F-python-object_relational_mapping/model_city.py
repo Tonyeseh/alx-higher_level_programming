@@ -7,6 +7,7 @@ from sqlalchemy import Column, String, Integer, ForeignKey
 
 Base = declarative_base()
 
+
 class City(Base):
     """Defiens the class City for mysql db
 
