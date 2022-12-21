@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """
+Contains the declaration of class State and instance Base
 """
 from sqlalchemy import Column, String, Integer
 from sqlalchemy.ext.declarative import declarative_base
