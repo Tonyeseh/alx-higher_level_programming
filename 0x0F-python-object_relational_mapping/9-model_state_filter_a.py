@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-prints first state object from database hbtn_0e_6_usa
+prints state object  that has 'a' in it's name from database hbtn_0e_6_usa
 """
 
 import sys
